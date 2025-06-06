@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import "tailwindcss";
+
+:root {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-variation-settings: "wdth" 100;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 500;
+}
+
+@layer base {
+    :root {
+        --text: ;
+        --background: ;
+        --primary: ;
+        --secondary: #0b2cbe;
+        --accent: ;
+    }
+    /* @variant dark {
+
+    } */
+}
+
+@theme {
+    --color-brand-text: #201D36;
+    --color-brand-background: #fbfbfb;
+    --color-brand-primary: #F2BA41;
+    --color-brand-secondary: var(--secondary);
+    --color-brand_accent: #8194bb;
+}
