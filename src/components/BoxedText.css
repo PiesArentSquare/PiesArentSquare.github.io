@@ -1,0 +1,6 @@
+.boxed-text-stroke {
+    -webkit-text-stroke: 1rem transparent;
+    @media (width >= 48rem /* 768px */) {
+        -webkit-text-stroke: 2rem transparent;
+    }
+}
