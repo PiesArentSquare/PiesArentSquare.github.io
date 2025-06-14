@@ -60,6 +60,10 @@ export const useImageAlignment = (imgRef: React.RefObject<HTMLImageElement | nul
         }
     }, [imgRef, calculateAlignment])
 
+    useEffect(() => {
+        calculateAlignment()
+    }, [])
+
     return {
         ref: setElementRef,
         imgSize,
