@@ -21,10 +21,10 @@ export const useImageAlignment = (imgRef: React.RefObject<HTMLImageElement | nul
         let fitWidth, fitHeight
         if (imgAspect < bgAspect) {
             fitWidth = bgRect.width
-            fitHeight = fitWidth * imgAspect
+            fitHeight = fitWidth / imgAspect
         } else {
             fitHeight = bgRect.height
-            fitWidth = fitHeight / imgAspect
+            fitWidth = fitHeight * imgAspect
         }
 
         // bgPos origin is top left of text, object-bottom means image origin is bottom middle
