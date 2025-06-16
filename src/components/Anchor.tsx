@@ -20,20 +20,14 @@ const Anchor = ({href, children, group = true, className, darkBorder = false, en
             }, '']
     }, [href])
 
-    const lightClasses = useMemo(() => {
-        const styles = 'group-focus-within/project:border-brand-primary'
-        if (enableHover)
-            return 'group-hover/project:-inset-4 group-hover/project:border-brand-primary ' + styles
-        else
-            return styles
-    }, [enableHover])
-
-    const darkClasses = useMemo(() => {
-        const styles = 'group-focus-within/project:border-brand-text'
-        if (enableHover)
-            return 'group-hover/project:-inset-4 group-hover/project:border-brand-text ' + styles
-        else
-            return styles
+    const [lightClasses, darkClasses] = useMemo(() => {
+        let lightStyles = 'group-focus-within/project:border-brand-primary'
+        let darkStyles = 'group-focus-within/project:border-brand-text'
+        if (enableHover) {
+            lightStyles = 'group-hover/project:-inset-4 group-hover/project:border-brand-primary ' + lightStyles
+            darkStyles = 'group-hover/project:-inset-4 group-hover/project:border-brand-text ' + darkStyles
+        }
+        return [lightStyles, darkStyles]
     }, [enableHover])
 
     return <a href={url} onClick={onclick} target={target} className={`group/project relative ${enableHover ? 'hover:opacity-100' : ''}  outline-none ${group && enableHover ? 'group-hover:opacity-50' : ''} transition-all duration-300 ${className}`}>

@@ -6,10 +6,11 @@ import wave from '../assets/wave.svg'
 import BoxedText from '../components/BoxedText'
 import Project from '../components/Project'
 import Anchor from '../components/Anchor'
+import Technology from '../components/TechnologyHighlight'
 
 const Home = () => {
     const background = useRef<HTMLImageElement>(null)
-    const blendMode = 'mix-blend-difference', backgroundColor = 'bg-blue-700'
+    const blendMode = '', backgroundColor = ''
 
     const scrollThreshold = useRef<HTMLDivElement>(null)
     const [darkenNav, setDarkenNav] = useState(false)
@@ -70,9 +71,19 @@ const Home = () => {
         <section ref={projects} id='projects' className='flex flex-col lg:flex-row-reverse items-end lg:items-start justify-end py-24 md:py-36 lg:py-48 px-[10%] bg-brand-text text-brand-background'>
             <BoxedText content='Projects' backgroundColor='bg-brand-text' className='text-3xl md:text-7xl font-extrabold ml-12 mb-4 md:mb-8 whitespace-nowrap' direction='left'/>
             <div className='group max-w-[60ch] flex flex-col gap-16 mt-3'>
-                <Project title='NTRU Encrypted Messaging' href='https://github.com/piesarentsquare/ntru-messaging' subtitle='Full-stack development' content='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et  ligula nec velit volutpat imperdiet ut at metus. Praesent gravida tortor quis augue euismod mollis. Suspendisse potenti. Pellentesque quis elit  libero.' />
-                <Project title='Checkmate' href='https://github.com/Paul-Austin-Oswego-CSC480-HCI521/OZ-CSC-480-HCI-521-Fall-2024' subtitle='Backend lead' content='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et  ligula nec velit volutpat imperdiet ut at metus. Praesent gravida tortor quis augue euismod mollis. Suspendisse potenti. Pellentesque quis elit  libero.' />
-                <Project title='Gravity Wave Analysis Tool' href='https://github.com/gravitywaveanalysistool/gwat' subtitle='Design, development, testing' content='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et  ligula nec velit volutpat imperdiet ut at metus. Praesent gravida tortor quis augue euismod mollis. Suspendisse potenti. Pellentesque quis elit  libero.' />
+                <Project title='NTRU Encrypted Messaging' href='https://github.com/piesarentsquare/ntru-messaging' subtitle='Encryption implementation, Full-stack development'>
+                    Implemented a quantum resistent encryption scheme based on <Technology>NTRU</Technology>, then built a small messaging app utililizing it for authentication and message encryption.
+                    Built custom Login Filters and Message Converters to integrate the encryption neatly into <Technology>Spring Boot</Technology>'s ecosystem,
+                    and used <Technology>WebSockets</Technology> to facilitate 2-way communication with the <Technology>React</Technology>+<Technology>TailwindCSS</Technology> frontend.
+                </Project>
+                <Project title='Checkmate' href='https://github.com/Paul-Austin-Oswego-CSC480-HCI521/OZ-CSC-480-HCI-521-Fall-2024' subtitle='Backend lead, integration, deployment'>
+                    Led a team of seven to develop the backend of a monday.com/jira like productivity webapp using <Technology>OpenLiberty</Technology>, <Technology>ExpressJS</Technology>, and <Technology>SQLite</Technology> deployed with <Technology>Docker</Technology>.
+                    Worked closely with designers, frontend developers, and quality assurance teams to implement Agile methodologies and ensure customer satisfaction.
+                </Project>
+                <Project title='Gravity Wave Analysis Tool' href='https://github.com/gravitywaveanalysistool/gwat' subtitle='Design, development, testing'>
+                    Led a team of four to design and develop a tool to study whether phenomena during the 2024 solar eclipse for NASA Goddard and SUNY Oswego.
+                    Used <Technology>numpy</Technology> and <Technology>pandas</Technology> to process data, then displayed it in a GUI application built with <Technology>TKinter</Technology> and <Technology>matplotlib</Technology>.
+                </Project>
             </div>
         </section>
         
