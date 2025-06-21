@@ -8,7 +8,7 @@ interface AnchorProps extends React.PropsWithChildren {
     enableHover?: boolean
 }
 
-const Anchor = ({href, children, group = true, className, darkBorder = false, enableHover = true}: AnchorProps) => {
+const Anchor = ({href, children, group = false, className, darkBorder = false, enableHover = true}: AnchorProps) => {
     const [url, onclick, target] = useMemo(() => {
         if (typeof href == 'string')
             return [href, (e:React.MouseEvent<HTMLElement>) => {e.currentTarget.blur()}, '_blank']
@@ -24,8 +24,8 @@ const Anchor = ({href, children, group = true, className, darkBorder = false, en
         let lightStyles = 'group-focus-within/project:border-brand-primary'
         let darkStyles = 'group-focus-within/project:border-brand-text'
         if (enableHover) {
-            lightStyles = 'group-hover/project:-inset-4 group-hover/project:border-brand-primary ' + lightStyles
-            darkStyles = 'group-hover/project:-inset-4 group-hover/project:border-brand-text ' + darkStyles
+            lightStyles = 'group-hover/project:-inset-3 md:group-hover/project:-inset-4 group-hover/project:border-brand-primary ' + lightStyles
+            darkStyles = 'group-hover/project:-inset-3 md:group-hover/project:-inset-4 group-hover/project:border-brand-text ' + darkStyles
         }
         return [lightStyles, darkStyles]
     }, [enableHover])

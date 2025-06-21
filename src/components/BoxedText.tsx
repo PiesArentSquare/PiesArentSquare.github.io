@@ -13,7 +13,7 @@ interface BoxedTextProps {
 }
 
 const BoxedText = ({as: Tag = 'h2', imgRef, content, className, backgroundColor, blendMode, direction = 'right'}: BoxedTextProps) => {
-    const {ref, imgSize, imgPos, recalculate} = imgRef ? useImageAlignment(imgRef) : {}
+    const {ref, imgSize, imgPos} = imgRef ? useImageAlignment(imgRef) : {}
 
     // small means left when < md, right when >= md
     const [boxMargin, textPadding, boxPlacement] = useMemo(() => {

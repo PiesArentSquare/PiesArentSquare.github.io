@@ -12,7 +12,7 @@ const Project = ({title, subtitle, href, children}: ProjectProps) => {
         let words = title.split(' ')
         return [words.pop(), words.join(' ') + '\ ']
     }, [title])
-    return <Anchor href={href}>
+    return <Anchor group href={href}>
         <h3 className='text-2xl md:text-4xl font-bold'>{rest}
             <span className='inline-block text-nowrap'>
                 {last}

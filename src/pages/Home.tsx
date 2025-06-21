@@ -7,6 +7,8 @@ import BoxedText from '../components/BoxedText'
 import Project from '../components/Project'
 import Anchor from '../components/Anchor'
 import Technology from '../components/TechnologyHighlight'
+import { MdEmail } from 'react-icons/md'
+import { VscGithubInverted } from 'react-icons/vsc'
 
 const Home = () => {
     const background = useRef<HTMLImageElement>(null)
@@ -18,7 +20,6 @@ const Home = () => {
     const hero = useRef<HTMLDivElement>(null)
     const aboutMe = useRef<HTMLDivElement>(null)
     const projects = useRef<HTMLDivElement>(null)
-    const contact = useRef<HTMLDivElement>(null)
     
 
     const scrollObserver = new IntersectionObserver(entries => setDarkenNav(entries[0].boundingClientRect.y < 0))
@@ -37,10 +38,11 @@ const Home = () => {
                         <img src={logoNoText} alt='PiesArentSquare' className='sm:hidden inline' />
                     </Anchor>
                 </div>
-                <ul className={`transition-all flex gap-4 md:gap-16`}>
-                    <li><Anchor group={false} href={aboutMe}>Info</Anchor></li>
-                    <li><Anchor group={false} href={projects}>Projects</Anchor></li>
-                    <li><Anchor group={false} href={contact}>Contact</Anchor></li>
+                <ul className={`transition-all flex gap-4 md:gap-16 items-center`}>
+                    <li><Anchor href={aboutMe}>Info</Anchor></li>
+                    <li><Anchor href={projects}>Projects</Anchor></li>
+                    <li><Anchor href='mailto:jjhh12@outlook.com'><MdEmail className='text-lg md:text-2xl inline' /></Anchor></li>
+                    <li><Anchor href='https://github.com/piesarentsquare'><VscGithubInverted className='text-lg md:text-2xl inline -mr-[3px]'/> </Anchor> </li>
                 </ul>
             </div>
         </nav>
@@ -62,9 +64,14 @@ const Home = () => {
         <section ref={aboutMe} id='about-me' className='flex flex-col lg:flex-row justify-end py-24 sm:py-36 lg:py-48 px-[10%]'>
             <BoxedText content='About Me' backgroundColor='bg-brand-background' className='text-3xl md:text-7xl font-extrabold mr-12 mb-4 md:mb-8 whitespace-nowrap' />
             <div className='max-w-[60ch] flex flex-col gap-12 mt-3'>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et  ligula nec velit volutpat imperdiet ut at metus. Praesent gravida tortor quis augue euismod mollis. Suspendisse potenti. Pellentesque quis elit  libero. Phasellus semper risus non nunc imperdiet, vitae luctus metus  vulputate. Curabitur aliquet diam sed ligula maximus laoreet non in  nunc. Donec turpis nisi, tincidunt vitae nisl tincidunt, dapibus  placerat ligula. Etiam a malesuada diam.</p>
-                <p>Sed nec lorem dolor. Nulla diam elit, commodo non fringilla vitae,  viverra vitae est. Duis hendrerit iaculis arcu vel malesuada. Praesent  euismod nulla sed velit posuere, in varius ante eleifend. Donec dui  metus, efficitur a felis sed, tincidunt tempor enim. Cras sit amet  tincidunt sapien. Morbi molestie magna vitae felis placerat, sed  sagittis lacus tempus. Fusce volutpat odio ac lorem vehicula posuere. Ut ac est in sem auctor condimentum. Cras a ultrices lacus.</p>
-                <p>Aliquam sollicitudin nulla at felis vulputate dignissim. Maecenas sit  amet tempus est. Etiam porttitor ipsum id mauris scelerisque, ut  vestibulum erat blandit. Aenean et orci eu leo dictum accumsan sit amet  eu metus. Phasellus id dui eget erat condimentum molestie. Donec sit  amet mi ex. Vivamus sit amet massa a eros finibus volutpat. Donec nec  elit nec justo laoreet lacinia. Nullam bibendum ligula a neque suscipit  elementum. Mauris vel hendrerit dolor. Sed eu commodo felis. Vestibulum  ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia  curae; Aenean fringilla nunc felis.</p>
+                <p>I'm a software engineer who loves to find that clean design which makes working within a codebase feel effortless. I recently graduated from SUNY Oswego with a
+                    Bachelors in Software Engineering where I focused on full-stack and application development, in addition to higher-level math.</p>
+                <p>When I work on a project, I tend to get widely involved: getting authentication tokens to propagate across the frontend, helping
+                    people set up api configuration, or getting a docker image to run with the right user permissions. I enjoy unblocking teammates
+                    where I can, leading me to have a hand in many different parts of the project. That breadth gives me a good overview, letting
+                    me see both the forest and the trees.</p>
+                <p>My favorite projects are those which challenge me in new ways and push me to learn new things. And when when the day comes to a close,
+                    I love to learn about linguistics, write music, or crawl through digital dungeons.</p>
             </div>
         </section>
         
@@ -85,11 +92,6 @@ const Home = () => {
                     Used <Technology>numpy</Technology> and <Technology>pandas</Technology> to process data, then displayed it in a GUI application built with <Technology>TKinter</Technology> and <Technology>matplotlib</Technology>.
                 </Project>
             </div>
-        </section>
-        
-        <section ref={contact} id='contact' className='flex flex-col md:flex-row justify-center py-24 md:py-48 px-[10%] bg-brand-primary text-brand-background gap-16'>
-            <Anchor group={false} href='mailto:jjhh12@outlook.com' className='text-brand-text underline decoration-2' darkBorder={true}>Email: jjhh12@outlook.com</Anchor>
-            <Anchor group={false} href='https://github.com/piesarentsquare' className='text-brand-text underline decoration-2' darkBorder={true}>GitHub: @PiesArentSquare</Anchor>
         </section>
     </div>
 }
